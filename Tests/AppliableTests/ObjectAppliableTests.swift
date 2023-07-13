@@ -23,73 +23,51 @@
 import XCTest
 @testable import Appliable
 
-final class AppliableTests: XCTestCase {
-    func test_applying_init() throws {
-        let item = Item().applying {
+final class ObjectAppliableTests: XCTestCase {
+    func test_apply_init() throws {
+        let object = Object().apply {
             $0.value = 1
         }
 
-        XCTAssertEqual(item.value, 1)
-    }
-
-    func test_applying_assign() throws {
-        let item1 = Item(1)
-
-        let item2 = item1.applying {
-            $0.value = 2
-        }
-
-        XCTAssertEqual(item1.value, 1)
-        XCTAssertEqual(item2.value, 2)
+        XCTAssertEqual(object.value, 1)
     }
 
     func test_apply_assign() throws {
-        var item = Item(1)
+        let object = Object(1)
 
-        item.apply {
+        object.apply {
             $0.value = 2
         }
 
-        XCTAssertEqual(item.value, 2)
+        XCTAssertEqual(object.value, 2)
     }
 
     func test_apply_assign_first() throws {
-        var item1 = Item(1)
-        let item2 = item1
+        let object1 = Object(1)
+        let object2 = object1
 
-        item1.apply {
+        object1.apply {
             $0.value = 2
         }
 
-        XCTAssertEqual(item1.value, 2)
-        XCTAssertEqual(item2.value, 1)
+        XCTAssertEqual(object1.value, 2)
+        XCTAssertEqual(object2.value, 2)
     }
 
     func test_apply_assign_second() throws {
-        let item1 = Item(1)
-        var item2 = item1
+        let object1 = Object(1)
+        let object2 = object1
 
-        item2.apply {
+        object2.apply {
             $0.value = 2
         }
 
-        XCTAssertEqual(item1.value, 1)
-        XCTAssertEqual(item2.value, 2)
-    }
-
-    func test_applyingEach_array() throws {
-        let array1 = [Item(1), Item(2), Item(3)]
-
-        let array2 = array1.applyingEach {
-            $0.value += 1
-        }
-
-        XCTAssertEqual(array1.map(\.value), [1, 2, 3])
-        XCTAssertEqual(array2.map(\.value), [2, 3, 4])
+        XCTAssertEqual(object1.value, 2)
+        XCTAssertEqual(object2.value, 2)
     }
 
     func test_applyEach_array() throws {
-        var array = [Item(1), Item(2), Item(3)]
+        let array = [Object(1), Object(2), Object(3)]
 
         array.applyEach {
             $0.value += 1
@@ -101,7 +79,7 @@ final class AppliableTests: XCTestCase {
 
 // MARK: - Helpers
 
-private struct Item: Appliable {
+private class Object: ObjectAppliable {
     var value: Int
 
     init(_ value: Int = 0) {
