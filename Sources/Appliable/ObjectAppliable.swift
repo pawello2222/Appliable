@@ -23,57 +23,39 @@
 import Foundation
 
 /// A protocol that provides a convenient configuration using closures.
-public protocol Appliable {}
+public protocol ObjectAppliable {}
 
-extension Appliable {
+extension ObjectAppliable {
     /// Applies configuration using the given closure.
     ///
     /// - Parameter block: The configuration block to apply.
     @discardableResult
-    public func applying(_ block: (inout Self) throws -> Void) rethrows -> Self {
-        var copy = self
-        try block(&copy)
-        return copy
-    }
-
-    /// Applies configuration using the given closure.
-    ///
-    /// - Parameter block: The configuration block to apply.
-    public mutating func apply(_ block: (inout Self) throws -> Void) rethrows {
-        try block(&self)
+    public func apply(_ block: (Self) throws -> Void) rethrows -> Self {
+        try block(self)
+        return self
     }
 }
 
-// MARK: - MutableCollection
+// MARK: - Collection
 
-extension MutableCollection where Element: Appliable {
+extension Collection where Element: ObjectAppliable {
     /// Applies configuration using the given closure.
     ///
     /// - Parameter block: The configuration block to apply.
     @discardableResult
-    public func applyingEach(_ block: (inout Element) throws -> Void) rethrows -> Self {
-        var copy = self
-        try copy.applyEach(block)
-        return copy
-    }
-
-    /// Applies configuration using the given closure.
-    ///
-    /// - Parameter block: The configuration block to apply.
-    public mutating func applyEach(_ block: (inout Element) throws -> Void) rethrows {
-        var index = startIndex
-        while index != endIndex {
-            try self[index].apply(block)
-            formIndex(after: &index)
+    public func applyEach(_ block: (Element) throws -> Void) rethrows -> Self {
+        try forEach {
+            try $0.apply(block)
         }
+        return self
     }
 }
 
 // MARK: - Conformance
 
-extension Array: Appliable {}
-extension Calendar: Appliable {}
-extension Date: Appliable {}
-extension Dictionary: Appliable {}
-extension Set: Appliable {}
-extension URL: Appliable {}
+extension NSObject: ObjectAppliable {}
+
+extension JSONDecoder: ObjectAppliable {}
+extension JSONEncoder: ObjectAppliable {}
+extension PropertyListDecoder: ObjectAppliable {}
+extension PropertyListEncoder: ObjectAppliable {}
