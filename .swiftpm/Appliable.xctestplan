@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "7783657C-4909-4489-A835-AD8889D0C6A8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "Appliable",
+          "name" : "Appliable"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AppliableTests",
+        "name" : "AppliableTests"
+      }
+    }
+  ],
+  "version" : 1
+}
