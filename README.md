@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/pawello2222/Appliable">
+  <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain">
     <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/swift.yml?logo=github" alt="Build">
   </a>
   <a href="https://app.codecov.io/gh/pawello2222/Appliable">
@@ -8,35 +8,35 @@
   <a href="https://github.com/pawello2222/Appliable">
     <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language">
   </a>
-  <a href="https://github.com/pawello2222/Appliable">
+  <a href="https://github.com/pawello2222/Appliable#installation">
     <img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="Swift Package Manager">
   </a>
   <a href="https://github.com/pawello2222/Appliable/releases">
     <img src="https://img.shields.io/github/v/release/pawello2222/Appliable" alt="Release version">
   </a>
-  <a href="https://github.com/pawello2222/Appliable/blob/main/LICENSE">
+  <a href="https://github.com/pawello2222/Appliable/blob/main/LICENSE.md">
     <img src="https://img.shields.io/github/license/pawello2222/Appliable" alt="License">
   </a>
 </p>
 
 # Appliable
 
-Appliable makes configuring objects easier and with less code.
+Appliable makes configuring objects easier and more convenient.
 
 <details>
-<summary><b>Table of Contents</b> (click to open)</summary>
-<!-- MarkdownTOC -->
+  <summary>
+    <b>Table of Contents</b>
+  </summary>
 
-1. [Highligths](#highligths)
-2. [Installation](#installation)
-2. [Examples](#examples)
-3. [Conformance](#conformance)
-4. [License](#license)
+  1. [Highlights](#highlights)
+  2. [Installation](#installation)
+  2. [Examples](#examples)
+  3. [Conformance](#conformance)
+  4. [License](#license)
 
-<!-- /MarkdownTOC -->
 </details>
 
-## Highlights <a name="highligths"></a>
+## Highlights <a name="highlights"></a>
 
 ```swift
 let button = UIButton().apply {
