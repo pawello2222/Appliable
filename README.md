@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain">
-    <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/swift.yml?logo=github" alt="Build">
+    <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/ci.yml?logo=github" alt="Build">
   </a>
   <a href="https://codecov.io/gh/pawello2222/Appliable">
     <img src="https://img.shields.io/codecov/c/github/pawello2222/Appliable?logo=codecov" alt="Code coverage">
@@ -172,7 +172,9 @@ let components = [UILabel(), UIButton()].applyEach {
 ### Custom conformance
 
 ```swift
-extension Calendar: Appliable {}
+extension Calendar: Appliable {} // value types
+
+extension JSONDecoder: ObjectAppliable {} // reference types
 ```
 
 ```swift
