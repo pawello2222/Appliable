@@ -2,7 +2,7 @@
   <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain">
     <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/swift.yml?logo=github" alt="Build">
   </a>
-  <a href="https://app.codecov.io/gh/pawello2222/Appliable">
+  <a href="https://codecov.io/gh/pawello2222/Appliable">
     <img src="https://img.shields.io/codecov/c/github/pawello2222/Appliable?logo=codecov" alt="Code coverage">
   </a>
   <a href="https://github.com/pawello2222/Appliable">
