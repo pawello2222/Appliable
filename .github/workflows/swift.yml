@@ -30,3 +30,4 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ${{ env.LCOV_PATH }}
+        fail_ci_if_error: true
