@@ -3,7 +3,7 @@
     <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/ci.yml?logo=github" alt="Build">
   </a>
   <a href="https://codecov.io/gh/pawello2222/Appliable">
-    <img src="https://img.shields.io/codecov/c/github/pawello2222/Appliable?logo=codecov" alt="Code coverage">
+    <img src="https://codecov.io/gh/pawello2222/Appliable/branch/main/graph/badge.svg?token=3MOP4XGCAU" alt="Code coverage">
   </a>
   <a href="https://github.com/pawello2222/Appliable">
     <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language">
