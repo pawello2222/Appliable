@@ -21,7 +21,7 @@
 
 # Appliable
 
-Appliable makes configuring objects easier and more convenient.
+Appliable makes configuring objects easier and more convenient using closures.
 
 <details>
   <summary>
