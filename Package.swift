@@ -8,20 +8,21 @@ let package = Package(
         .iOS(.v15),
         .macOS(.v12),
         .tvOS(.v15),
-        .watchOS(.v8),
+        .watchOS(.v8)
     ],
     products: [
         .library(
             name: "Appliable",
             targets: ["Appliable"]
-        ),
+        )
     ],
     targets: [
         .target(
-            name: "Appliable"),
+            name: "Appliable"
+        ),
         .testTarget(
             name: "AppliableTests",
             dependencies: ["Appliable"]
-        ),
+        )
     ]
 )
