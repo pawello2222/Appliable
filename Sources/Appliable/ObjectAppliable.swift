@@ -22,7 +22,7 @@
 
 import Foundation
 
-/// A protocol that provides a convenient configuration using closures.
+/// A protocol that enables configuring objects using closures.
 public protocol ObjectAppliable {}
 
 extension ObjectAppliable {
@@ -39,7 +39,7 @@ extension ObjectAppliable {
 // MARK: - Collection
 
 extension Collection where Element: ObjectAppliable {
-    /// Applies configuration using the given closure.
+    /// Applies configuration to each element using the given closure.
     ///
     /// - Parameter block: The configuration block to apply.
     @discardableResult

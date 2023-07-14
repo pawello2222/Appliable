@@ -22,7 +22,7 @@
 
 import Foundation
 
-/// A protocol that provides a convenient configuration using closures.
+/// A protocol that enables configuring objects using closures.
 public protocol Appliable {}
 
 extension Appliable {
@@ -36,7 +36,7 @@ extension Appliable {
         return copy
     }
 
-    /// Applies configuration using the given closure.
+    /// Applies configuration in-place using the given closure.
     ///
     /// - Parameter block: The configuration block to apply.
     public mutating func apply(_ block: (inout Self) throws -> Void) rethrows {
@@ -47,7 +47,7 @@ extension Appliable {
 // MARK: - MutableCollection
 
 extension MutableCollection where Element: Appliable {
-    /// Applies configuration using the given closure.
+    /// Applies configuration to each element using the given closure.
     ///
     /// - Parameter block: The configuration block to apply.
     @discardableResult
@@ -57,7 +57,7 @@ extension MutableCollection where Element: Appliable {
         return copy
     }
 
-    /// Applies configuration using the given closure.
+    /// Applies configuration in-place to each element using the given closure.
     ///
     /// - Parameter block: The configuration block to apply.
     public mutating func applyEach(_ block: (inout Element) throws -> Void) rethrows {
