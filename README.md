@@ -1,4 +1,7 @@
 <p align="center">
+  <img src="./.resources/Assets/logo.png" alt="Appliable Logo" height=150>
+</p>
+<p align="center">
   <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain">
     <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/ci.yml?logo=github" alt="Build">
   </a>
@@ -30,9 +33,9 @@ Appliable makes configuring objects easier and more convenient using closures.
 
   1. [Highlights](#highlights)
   2. [Installation](#installation)
-  2. [Examples](#examples)
-  3. [Conformance](#conformance)
-  4. [License](#license)
+  3. [Examples](#examples)
+  4. [Conformance](#conformance)
+  5. [License](#license)
 
 </details>
 
@@ -72,7 +75,7 @@ Appliable is available as a Swift Package.
 
 ## Examples <a name="examples"></a>
 
-### Objects
+### Classes
 
 ```swift
 let button = UIButton().apply {
