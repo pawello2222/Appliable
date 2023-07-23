@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./.resources/Assets/logo.png" alt="Appliable Logo" height=150>
+  <img src="./.resources/Assets/logo.png" alt="Appliable logo" height=150>
 </p>
 <p align="center">
   <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain">
@@ -154,7 +154,7 @@ let components = [UILabel(), UIButton()].applyEach {
 
 ### Built-in conformance
 
-#### 1. Value types:
+1. Value types
 
 - `Array`
 - `Calendar`
@@ -163,14 +163,14 @@ let components = [UILabel(), UIButton()].applyEach {
 - `Set`
 - `URL`
 
-#### 2. Reference types:
+2. Reference types
 
 - `JSONDecoder`
 - `JSONEncoder`
 - `PropertyListDecoder`
 - `PropertyListEncoder`
 
-#### 3. All objects inheriting from `NSObject`.
+3. All classes inheriting from `NSObject`
 
 ### Custom conformance
 
@@ -192,4 +192,4 @@ let item = Item().applying {
 
 ## License <a name="license"></a>
 
-Appliable is available under the MIT license. See the [LICENSE](https://github.com/pawello2222/Appliable/blob/main/LICENSE.md) file for more info.
+Appliable is available under the MIT license. See the [LICENSE](./LICENSE.md) file for more info.
