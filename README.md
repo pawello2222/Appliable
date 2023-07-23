@@ -12,6 +12,11 @@
     <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language">
   </a>
   <a href="https://github.com/pawello2222/Appliable#installation">
+    <img src="https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-lightgrey.svg" alt="Supported platforms">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/pawello2222/Appliable#installation">
     <img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="Swift Package Manager">
   </a>
   <a href="https://github.com/pawello2222/Appliable/releases">
@@ -58,12 +63,10 @@ UserDefaults.standard.apply {
 ## Installation <a name="installation"></a>
 
 ### Requirements
-* Swift 5.5+
-* Xcode 13+
 * iOS 15.0+
 * macOS 12.0+
-* tvOS 15.0+
 * watchOS 8.0+
+* tvOS 15.0+
 
 ### Swift Package Manager
 
