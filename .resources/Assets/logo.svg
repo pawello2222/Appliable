@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   sodipodi:docname="icon.svg"
+   sodipodi:docname="logo.svg"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    id="svg2081"
    version="1.1"
    viewBox="0 0 50 50"
    height="50mm"
    width="50mm"
-   inkscape:export-filename="icon.png"
+   inkscape:export-filename="logo.png"
    inkscape:export-xdpi="520.19"
    inkscape:export-ydpi="520.19"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -20,6 +20,18 @@
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2075">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2682">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop2678" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop2680" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient1863">
@@ -41,6 +53,16 @@
        x2="40.466615"
        y2="24.999999"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2682"
+       id="linearGradient2684"
+       x1="0.50000045"
+       y1="25"
+       x2="49.5"
+       y2="25"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97923199,0,0,0.97923199,0.51920111,0.51920111)" />
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="1"
@@ -50,11 +72,11 @@
      inkscape:window-width="3440"
      showgrid="false"
      inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g2"
      inkscape:document-units="mm"
-     inkscape:cy="85.892857"
-     inkscape:cx="-9.6428571"
-     inkscape:zoom="2.8"
+     inkscape:cy="95.803571"
+     inkscape:cx="52.946429"
+     inkscape:zoom="5.6"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -80,39 +102,31 @@
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
     <rect
-       y="2.5"
-       x="2.5"
-       height="45"
-       width="45"
-       id="rect2694"
-       style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.311158;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.311158, 0.622315;stroke-dashoffset:0;stroke-opacity:0;stop-color:#000000"
-       inkscape:export-xdpi="577.99115"
-       inkscape:export-ydpi="577.99115"
-       inkscape:export-filename="icon.png" />
+       style="fill:url(#linearGradient2684);fill-opacity:1;stroke:#6600ff;stroke-width:1.95846;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect957"
+       width="47.041534"
+       height="47.041534"
+       x="1.4792328"
+       y="1.4792328"
+       ry="8.2651987"
+       inkscape:export-filename=".\icon-alt.png"
+       inkscape:export-xdpi="520.19"
+       inkscape:export-ydpi="520.19" />
     <g
        id="g1">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:22.5778px;line-height:1.25;font-family:sans-serif;fill:#6400ff;fill-opacity:1;stroke:#6500ff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1"
-         x="6.6996346"
-         y="31.416153"
-         id="text350"><tspan
-           sodipodi:role="line"
-           id="tspan348"
-           x="6.6996346"
-           y="31.416153"
-           style="font-size:22.5778px;fill:#6400ff;fill-opacity:1;stroke:#6500ff;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1">{ }</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:22.5778px;line-height:1.25;font-family:sans-serif;fill:#6400ff;fill-opacity:1;stroke:#6500ff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
-         x="20.127253"
-         y="31.449224"
-         id="text350-1-7"><tspan
-           sodipodi:role="line"
-           id="tspan348-5-3"
-           x="20.127253"
-           y="31.449224"
-           style="font-size:22.5778px;fill:#6400ff;fill-opacity:1;stroke:#6500ff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1">⦁</tspan></text>
+      <g
+         id="g2">
+        <path
+           d="m 18.969699,35.737685 h -1.653647 q -1.973353,0 -3.208077,-1.102432 -1.223699,-1.091407 -1.223699,-3.163978 v -1.642624 q 0,-1.863109 -0.915018,-2.910419 Q 11.05424,25.859897 9.1690815,25.859897 H 8.6068414 v -1.719793 h 0.5622401 q 1.8851585,0 2.8001765,-1.04731 0.915018,-1.058335 0.915018,-2.921444 v -1.642623 q 0,-2.072572 1.223699,-3.163979 1.234724,-1.102432 3.208077,-1.102432 h 1.653647 v 1.521356 h -1.256772 q -1.499307,0 -2.182815,0.694532 -0.672483,0.694532 -0.672483,2.237936 v 1.929255 q 0,1.53238 -0.848872,2.579691 -0.848873,1.036285 -2.359204,1.642623 v 0.264583 q 1.510331,0.606338 2.359204,1.653648 0.848872,1.036286 0.848872,2.568666 v 1.929255 q 0,1.543405 0.672483,2.237936 0.683508,0.694532 2.182815,0.694532 h 1.256772 z m 22.42346,-9.877788 h -0.56224 q -1.885159,0 -2.800177,1.058335 -0.915018,1.04731 -0.915018,2.910419 v 1.642624 q 0,2.072571 -1.234724,3.163978 -1.223699,1.102432 -3.197051,1.102432 h -1.653648 v -1.521356 h 1.256772 q 1.499307,0 2.171791,-0.694532 0.683507,-0.694531 0.683507,-2.237936 v -1.929255 q 0,-1.53238 0.848873,-2.568666 0.848872,-1.04731 2.359203,-1.653648 V 24.867709 Q 36.840116,24.261371 35.991244,23.225086 35.142371,22.177775 35.142371,20.645395 V 18.71614 q 0,-1.543404 -0.683507,-2.237936 -0.672484,-0.694532 -2.171791,-0.694532 h -1.256772 v -1.521356 h 1.653648 q 1.973352,0 3.197051,1.102432 1.234724,1.091407 1.234724,3.163979 v 1.642623 q 0,1.863109 0.915018,2.921444 0.915018,1.04731 2.800177,1.04731 h 0.56224 z"
+           id="text350"
+           style="font-size:22.5778px;line-height:1.25;fill:#6400ff;stroke:#6500ff;stroke-width:1.5"
+           aria-label="{ }" />
+        <path
+           d="m 25.000001,21.824996 q 0.859896,0 1.554428,0.4079 0.694532,0.407899 1.069359,1.135504 0.374827,0.727605 0.374827,1.631599 0,0.926043 -0.385851,1.653648 -0.385851,0.727605 -1.080383,1.12448 -0.694532,0.396875 -1.53238,0.396875 -0.837848,0 -1.53238,-0.396875 -0.694532,-0.396875 -1.080383,-1.12448 -0.385852,-0.727605 -0.385852,-1.653648 0,-0.903994 0.374827,-1.631599 0.374827,-0.727605 1.069359,-1.135504 0.694532,-0.4079 1.554429,-0.4079 z"
+           id="text350-1-7"
+           style="font-size:22.5778px;line-height:1.25;fill:#6400ff;stroke:#6500ff"
+           aria-label="⦁" />
+      </g>
     </g>
   </g>
   <script
