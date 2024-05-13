@@ -2,29 +2,15 @@
   <img src="./.resources/Assets/logo.png" alt="Appliable logo" height=150>
 </p>
 <p align="center">
-  <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain">
-    <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/ci.yml?logo=github" alt="Build">
-  </a>
-  <a href="https://codecov.io/gh/pawello2222/Appliable">
-    <img src="https://codecov.io/gh/pawello2222/Appliable/branch/main/graph/badge.svg?token=3MOP4XGCAU" alt="Code coverage">
-  </a>
-  <a href="https://github.com/pawello2222/Appliable">
-    <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language">
-  </a>
-  <a href="https://github.com/pawello2222/Appliable#installation">
-    <img src="https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-lightgrey.svg" alt="Supported platforms">
-  </a>
+  <a href="https://github.com/pawello2222/Appliable/actions?query=branch%3Amain"><img src="https://img.shields.io/github/actions/workflow/status/pawello2222/Appliable/ci.yml?logo=github" alt="Build"></a>
+  <a href="https://codecov.io/gh/pawello2222/Appliable"><img src="https://codecov.io/gh/pawello2222/Appliable/branch/main/graph/badge.svg?token=3MOP4XGCAU" alt="Code coverage"></a>
+  <a href="https://github.com/pawello2222/Appliable"><img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language"></a>
+  <a href="https://github.com/pawello2222/Appliable#installation"><img src="https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-lightgrey.svg" alt="Supported platforms"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/pawello2222/Appliable#installation">
-    <img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="Swift Package Manager">
-  </a>
-  <a href="https://github.com/pawello2222/Appliable/releases">
-    <img src="https://img.shields.io/github/v/release/pawello2222/Appliable" alt="Release version">
-  </a>
-  <a href="https://github.com/pawello2222/Appliable/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/pawello2222/Appliable" alt="License">
-  </a>
+  <a href="https://github.com/pawello2222/Appliable#installation"><img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="Swift Package Manager"></a>
+  <a href="https://github.com/pawello2222/Appliable/releases"><img src="https://img.shields.io/github/v/release/pawello2222/Appliable" alt="Release version"></a>
+  <a href="https://github.com/pawello2222/Appliable/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/pawello2222/Appliable" alt="License"></a>
 </p>
 
 # Appliable
