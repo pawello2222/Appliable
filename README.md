@@ -151,6 +151,7 @@ let components = [UILabel(), UIButton()].applyEach {
 - `Dictionary`
 - `Set`
 - `URL`
+- `URLRequest`
 
 2. Reference types
 

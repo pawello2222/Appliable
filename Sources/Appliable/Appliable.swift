@@ -77,3 +77,4 @@ extension Date: Appliable {}
 extension Dictionary: Appliable {}
 extension Set: Appliable {}
 extension URL: Appliable {}
+extension URLRequest: Appliable {}
