@@ -31,7 +31,7 @@ jobs:
         xcrun llvm-cov report $BUILD_FOLDER -instr-profile $PROFDATA_FOLDER
         xcrun llvm-cov export -format="lcov" $BUILD_FOLDER -instr-profile $PROFDATA_FOLDER > $LCOV_PATH
     - name: Upload Coverage Data
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ${{ env.LCOV_PATH }}
