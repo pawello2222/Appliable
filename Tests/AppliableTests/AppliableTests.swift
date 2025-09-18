@@ -20,40 +20,45 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import XCTest
-@testable import Appliable
+import Appliable
+import Testing
 
-final class AppliableTests: XCTestCase {
-    func test_applying_init() throws {
+@Suite("Appliable")
+struct AppliableTests {
+    @Test("applying on init")
+    func applying_init() throws {
         let item = Item().applying {
             $0.value = 1
         }
 
-        XCTAssertEqual(item.value, 1)
+        #expect(item.value == 1)
     }
 
-    func test_applying_assign() throws {
+    @Test("applying returns modified copy")
+    func applying_assign() throws {
         let item1 = Item(1)
 
         let item2 = item1.applying {
             $0.value = 2
         }
 
-        XCTAssertEqual(item1.value, 1)
-        XCTAssertEqual(item2.value, 2)
+        #expect(item1.value == 1)
+        #expect(item2.value == 2)
     }
 
-    func test_apply_assign() throws {
+    @Test("apply assigns in place")
+    func apply_assign() throws {
         var item = Item(1)
 
         item.apply {
             $0.value = 2
         }
 
-        XCTAssertEqual(item.value, 2)
+        #expect(item.value == 2)
     }
 
-    func test_apply_assign_first() throws {
+    @Test("apply on first copy mutates only first")
+    func apply_assign_first() throws {
         var item1 = Item(1)
         let item2 = item1
 
@@ -61,11 +66,12 @@ final class AppliableTests: XCTestCase {
             $0.value = 2
         }
 
-        XCTAssertEqual(item1.value, 2)
-        XCTAssertEqual(item2.value, 1)
+        #expect(item1.value == 2)
+        #expect(item2.value == 1)
     }
 
-    func test_apply_assign_second() throws {
+    @Test("apply on second copy mutates only second")
+    func apply_assign_second() throws {
         let item1 = Item(1)
         var item2 = item1
 
@@ -73,29 +79,31 @@ final class AppliableTests: XCTestCase {
             $0.value = 2
         }
 
-        XCTAssertEqual(item1.value, 1)
-        XCTAssertEqual(item2.value, 2)
+        #expect(item1.value == 1)
+        #expect(item2.value == 2)
     }
 
-    func test_applyingEach_array() throws {
+    @Test("applyingEach on array returns modified copy")
+    func applyingEach_array() throws {
         let array1 = [Item(1), Item(2), Item(3)]
 
         let array2 = array1.applyingEach {
             $0.value += 1
         }
 
-        XCTAssertEqual(array1.map(\.value), [1, 2, 3])
-        XCTAssertEqual(array2.map(\.value), [2, 3, 4])
+        #expect(array1.map(\.value) == [1, 2, 3])
+        #expect(array2.map(\.value) == [2, 3, 4])
     }
 
-    func test_applyEach_array() throws {
+    @Test("applyEach on array mutates in place")
+    func applyEach_array() throws {
         var array = [Item(1), Item(2), Item(3)]
 
         array.applyEach {
             $0.value += 1
         }
 
-        XCTAssertEqual(array.map(\.value), [2, 3, 4])
+        #expect(array.map(\.value) == [2, 3, 4])
     }
 }
 

@@ -20,29 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import XCTest
-@testable import Appliable
+import Appliable
+import Testing
 
-final class ObjectAppliableTests: XCTestCase {
-    func test_apply_init() throws {
+@Suite("ObjectAppliable")
+struct ObjectAppliableTests {
+    @Test("apply on init")
+    func apply_init() throws {
         let object = Object().apply {
             $0.value = 1
         }
 
-        XCTAssertEqual(object.value, 1)
+        #expect(object.value == 1)
     }
 
-    func test_apply_assign() throws {
+    @Test("apply assigns value")
+    func apply_assign() throws {
         let object = Object(1)
 
         object.apply {
             $0.value = 2
         }
 
-        XCTAssertEqual(object.value, 2)
+        #expect(object.value == 2)
     }
 
-    func test_apply_assign_first() throws {
+    @Test("apply on first reference updates both")
+    func apply_assign_first() throws {
         let object1 = Object(1)
         let object2 = object1
 
@@ -50,11 +54,12 @@ final class ObjectAppliableTests: XCTestCase {
             $0.value = 2
         }
 
-        XCTAssertEqual(object1.value, 2)
-        XCTAssertEqual(object2.value, 2)
+        #expect(object1.value == 2)
+        #expect(object2.value == 2)
     }
 
-    func test_apply_assign_second() throws {
+    @Test("apply on second reference updates both")
+    func apply_assign_second() throws {
         let object1 = Object(1)
         let object2 = object1
 
@@ -62,18 +67,19 @@ final class ObjectAppliableTests: XCTestCase {
             $0.value = 2
         }
 
-        XCTAssertEqual(object1.value, 2)
-        XCTAssertEqual(object2.value, 2)
+        #expect(object1.value == 2)
+        #expect(object2.value == 2)
     }
 
-    func test_applyEach_array() throws {
+    @Test("applyEach on array")
+    func applyEach_array() throws {
         let array = [Object(1), Object(2), Object(3)]
 
         array.applyEach {
             $0.value += 1
         }
 
-        XCTAssertEqual(array.map(\.value), [2, 3, 4])
+        #expect(array.map(\.value) == [2, 3, 4])
     }
 }
 
