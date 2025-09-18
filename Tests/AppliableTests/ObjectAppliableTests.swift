@@ -25,8 +25,12 @@ import Testing
 
 @Suite("ObjectAppliable")
 struct ObjectAppliableTests {
+    private enum TestError: Error {
+        case boom
+    }
+
     @Test("apply on init")
-    func apply_init() throws {
+    func apply_init() async throws {
         let object = Object().apply {
             $0.value = 1
         }
@@ -35,7 +39,7 @@ struct ObjectAppliableTests {
     }
 
     @Test("apply assigns value")
-    func apply_assign() throws {
+    func apply_assign() async throws {
         let object = Object(1)
 
         object.apply {
@@ -46,7 +50,7 @@ struct ObjectAppliableTests {
     }
 
     @Test("apply on first reference updates both")
-    func apply_assign_first() throws {
+    func apply_assign_first() async throws {
         let object1 = Object(1)
         let object2 = object1
 
@@ -59,7 +63,7 @@ struct ObjectAppliableTests {
     }
 
     @Test("apply on second reference updates both")
-    func apply_assign_second() throws {
+    func apply_assign_second() async throws {
         let object1 = Object(1)
         let object2 = object1
 
@@ -72,7 +76,7 @@ struct ObjectAppliableTests {
     }
 
     @Test("applyEach on array")
-    func applyEach_array() throws {
+    func applyEach_array() async throws {
         let array = [Object(1), Object(2), Object(3)]
 
         array.applyEach {
@@ -80,6 +84,53 @@ struct ObjectAppliableTests {
         }
 
         #expect(array.map(\.value) == [2, 3, 4])
+    }
+
+    @Test("apply propagates thrown errors")
+    func apply_throws() async throws {
+        let object = Object(1)
+
+        #expect(throws: TestError.self) {
+            try object.apply { _ in
+                throw TestError.boom
+            }
+        }
+
+        #expect(object.value == 1)
+    }
+
+    @Test("no-op apply leaves value unchanged")
+    func apply_noop() async throws {
+        let object = Object(3)
+
+        object.apply { _ in }
+
+        #expect(object.value == 3)
+    }
+
+    @Test("applyEach on empty array is no-op")
+    func applyEach_array_empty() async throws {
+        let array: [Object] = []
+
+        let result = array.applyEach {
+            $0.value += 1
+        }
+
+        #expect(result.isEmpty)
+        #expect(array.isEmpty)
+    }
+
+    @Test("chained apply mutates the same instance")
+    func apply_chained_same_instance() async throws {
+        let object = Object(1)
+
+        let result = object
+            .apply { $0.value += 2 }
+            .apply { $0.value *= 3 }
+
+        #expect(object === result)
+        #expect(object.value == 9)
+        #expect(result.value == 9)
     }
 }
 
