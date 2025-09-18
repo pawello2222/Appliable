@@ -20,29 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import XCTest
-@testable import Appliable
+import Appliable
+import Testing
 
-final class ObjectAppliableTests: XCTestCase {
-    func test_apply_init() throws {
+@Suite("ObjectAppliable")
+struct ObjectAppliableTests {
+    private enum TestError: Error {
+        case boom
+    }
+
+    @Test("apply on init")
+    func apply_init() async throws {
         let object = Object().apply {
             $0.value = 1
         }
 
-        XCTAssertEqual(object.value, 1)
+        #expect(object.value == 1)
     }
 
-    func test_apply_assign() throws {
+    @Test("apply assigns value")
+    func apply_assign() async throws {
         let object = Object(1)
 
         object.apply {
             $0.value = 2
         }
 
-        XCTAssertEqual(object.value, 2)
+        #expect(object.value == 2)
     }
 
-    func test_apply_assign_first() throws {
+    @Test("apply on first reference updates both")
+    func apply_assign_first() async throws {
         let object1 = Object(1)
         let object2 = object1
 
@@ -50,11 +58,12 @@ final class ObjectAppliableTests: XCTestCase {
             $0.value = 2
         }
 
-        XCTAssertEqual(object1.value, 2)
-        XCTAssertEqual(object2.value, 2)
+        #expect(object1.value == 2)
+        #expect(object2.value == 2)
     }
 
-    func test_apply_assign_second() throws {
+    @Test("apply on second reference updates both")
+    func apply_assign_second() async throws {
         let object1 = Object(1)
         let object2 = object1
 
@@ -62,18 +71,66 @@ final class ObjectAppliableTests: XCTestCase {
             $0.value = 2
         }
 
-        XCTAssertEqual(object1.value, 2)
-        XCTAssertEqual(object2.value, 2)
+        #expect(object1.value == 2)
+        #expect(object2.value == 2)
     }
 
-    func test_applyEach_array() throws {
+    @Test("applyEach on array")
+    func applyEach_array() async throws {
         let array = [Object(1), Object(2), Object(3)]
 
         array.applyEach {
             $0.value += 1
         }
 
-        XCTAssertEqual(array.map(\.value), [2, 3, 4])
+        #expect(array.map(\.value) == [2, 3, 4])
+    }
+
+    @Test("apply propagates thrown errors")
+    func apply_throws() async throws {
+        let object = Object(1)
+
+        #expect(throws: TestError.self) {
+            try object.apply { _ in
+                throw TestError.boom
+            }
+        }
+
+        #expect(object.value == 1)
+    }
+
+    @Test("no-op apply leaves value unchanged")
+    func apply_noop() async throws {
+        let object = Object(3)
+
+        object.apply { _ in }
+
+        #expect(object.value == 3)
+    }
+
+    @Test("applyEach on empty array is no-op")
+    func applyEach_array_empty() async throws {
+        let array: [Object] = []
+
+        let result = array.applyEach {
+            $0.value += 1
+        }
+
+        #expect(result.isEmpty)
+        #expect(array.isEmpty)
+    }
+
+    @Test("chained apply mutates the same instance")
+    func apply_chained_same_instance() async throws {
+        let object = Object(1)
+
+        let result = object
+            .apply { $0.value += 2 }
+            .apply { $0.value *= 3 }
+
+        #expect(object === result)
+        #expect(object.value == 9)
+        #expect(result.value == 9)
     }
 }
 
